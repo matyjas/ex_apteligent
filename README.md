@@ -1,6 +1,8 @@
 # ExApteligent
 
-**TODO: Add description**
+A library for accessing Apteligent's API from Elixir. Only planning to use the /trends endpoints, so let us know if you are looking for something else.
+
+[![Build Status](https://travis-ci.org/matyjas/ex_apteligent.svg?branch=master)](https://travis-ci.org/matyjas/ex_apteligent)
 
 ## Installation
 

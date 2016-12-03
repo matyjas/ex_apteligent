@@ -1,12 +1,12 @@
 defmodule Apteligent do
-	defstruct [:data_loc, :token]
 
-	def request(_, %Apteligent{token: nil}) do
-		{:invalid,
-		 "we need an OAuth token. Oass :stub for testing"}
+
+	def request(_, nil, _) do
+		{:error,
+		 "we need an token or pass :stub for testing"}
 		end
 	
-	def request(path, %Apteligent{token: :stub}) do
+	def request(path, :stub, _) do
 		Apteligent.Stub.request(path)
 	end
 	
