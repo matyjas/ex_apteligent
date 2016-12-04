@@ -1,7 +1,8 @@
 defmodule Trends do
 
-	def trends(appId) do
-		%{dau: 1_000, mau: 1_000_000}
+	def trends(data_loc, app_id, token, 
+						 apteligent_client \\ ApteligentClientHttp) do
+		apteligent_client.request(data_loc, "/trends/", app_id, token)
 	end
 
 	def dau(appId) do
