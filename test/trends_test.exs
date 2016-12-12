@@ -1,6 +1,7 @@
 defmodule TrendsTest do
-	use ExUnit.Case
-	doctest Trends
+  use ExUnit.Case
+  alias ExApteligent.Trends
+	doctest ExApteligent.Trends
 
 	test "trends has data" do
 		{:ok, data} = Trends.trends(:us, "app-1", "token-2")

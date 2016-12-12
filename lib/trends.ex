@@ -1,4 +1,4 @@
-defmodule Trends do
+defmodule ExApteligent.Trends do
 
   def trends(data_loc, app_id, token, apteligent_client \\ ApteligentClientHttp) do
     apteligent_client.request(data_loc, "/trends/", app_id, token)
