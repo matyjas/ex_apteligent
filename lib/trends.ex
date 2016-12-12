@@ -1,7 +1,8 @@
 defmodule ExApteligent.Trends do
 
-  def trends(data_loc, app_id, token, apteligent_client \\ ApteligentClientHttp) do
-    apteligent_client.request(data_loc, "/trends/", app_id, token)
+  def trends(data_loc, app_id, token, gateway \\ ApteligentGatewayHttp) do
+    {:ok, trends} = gateway.request(data_loc, "/trends/", app_id, token)
+    JsonParser.parse trends
   end
 
   def dau(appId) do
