@@ -4,7 +4,11 @@ defmodule ExApteligent.UrlBuilder do
   
   def prepare(path, app_id, options \\ []) do
     options = Keyword.merge(@defaults, options) 
-    "https://" <> domain_for_data_loc(options[:data_loc]) <> ":443/v2/" <> path <> "/" <> app_id
+    base_url(options[:data_loc]) <> path <> "/" <> app_id
+  end
+
+  defp base_url(data_loc) do
+    "https://" <> domain_for_data_loc(data_loc) <> ":443/v2/"
   end
 
   defp domain_for_data_loc(:us) do
