@@ -5,4 +5,3 @@ defmodule ApteligentGatewayHttp do
   end
 end
 
-# Use appropriate base URL with respect to the Data Location of your application: North America (developers.crittercism.com), Europe (developers.eu.crittercism.com).
