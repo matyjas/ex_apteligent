@@ -1,6 +1,7 @@
 defmodule ExApteligent.Trends do
-
-  def trends(data_loc, app_id, token, gateway \\ ApteligentGatewayHttp) do
+  alias ExApteligent.HttpGateway
+  
+  def trends(data_loc, app_id, token, gateway \\ HttpGateway) do
     {:ok, trends} = gateway.request(data_loc, "/trends/", app_id, token)
     JsonParser.parse trends
   end
