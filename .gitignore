@@ -18,3 +18,6 @@ erl_crash.dump
 
 # emacs rulez
 *~
+
+# my integration test setup script
+int-test.sh
