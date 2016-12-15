@@ -5,7 +5,6 @@ defmodule ExApteligent.HttpGateway do
   @behaviour ApteligentGateway
   def request(data_loc, path, app_id, token) do
     url = prepare(path, app_id, data_loc: data_loc)
-    #     HTTPotion.get(url, [headers: ["Authorization": "Bearer 5a839540a09f12373e52c7c82680318e"]])
     HTTPotion.get(url, [headers: ["Authorization": "Bearer " <> token]])
     |> make_presentable
   end
