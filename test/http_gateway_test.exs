@@ -1,5 +1,5 @@
 defmodule HttpGatewayTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias ExApteligent.HttpGateway
   doctest ExApteligent.HttpGateway
 

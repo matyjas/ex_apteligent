@@ -1,5 +1,5 @@
 defmodule UrlBuilderTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias ExApteligent.UrlBuilder
   doctest ExApteligent.UrlBuilder
 
