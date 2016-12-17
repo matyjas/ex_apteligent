@@ -1,5 +1,5 @@
 defmodule TrendsTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias ExApteligent.Trends
   doctest ExApteligent.Trends
 
