@@ -1,6 +1,7 @@
 defmodule ExApteligent.HttpGateway do
   import ExApteligent.UrlBuilder, only: [prepare: 3]
   alias HTTPotion.Response
+  alias ExApteligent.JsonParser
   
   @behaviour ApteligentGateway
   def request(data_loc, path, app_id, token) do

@@ -1,4 +1,4 @@
-defmodule JsonParser do
+defmodule ExApteligent.JsonParser do
   def parse(json) do
     JSX.decode json
   end
