@@ -6,7 +6,7 @@ defmodule TrendsTest do
   defmodule FakeTrendsGateway do
     @behaviour ApteligentGateway
     def request(_, _, _, _) do
-      {:ok, Fakes.TrendsResponse.sample()} 
+      Fakes.TrendsResponse.sample()
     end
   end
   
@@ -16,7 +16,10 @@ defmodule TrendsTest do
   end
 
   test "trends come back as map" do
-    {:ok, trends} = Trends.trends(:us, "app-1", "token-2", FakeTrendsGateway)
-    assert is_map trends
+    trendsTuple = Trends.trends(:us, "app-1", "token-2", FakeTrendsGateway)
+    assert is_tuple trendsTuple
+    {:ok, trendsMap} = trendsTuple
+    refute is_tuple trendsMap
+    assert is_map trendsMap
   end
 end

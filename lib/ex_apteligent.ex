@@ -3,20 +3,16 @@ defmodule ExApteligent do
   
   defmodule Trends do
     def trends(data_loc, app_id, token, gateway \\ HttpGateway) do
-      req(data_loc, "trends", app_id, token, gateway)
+      gateway.request(data_loc, "trends", app_id, token)
     end
 
     def dau(data_loc, app_id, token, gateway \\ HttpGateway) do
-      req(data_loc, "trends/dau", app_id, token, gateway)
+      gateway.request(data_loc, "trends/dau", app_id, token)
     end
 
     def mau(data_loc, app_id, token, gateway \\ HttpGateway) do
-      req(data_loc, "trends/mau", app_id, token, gateway)
-    end
-
-    defp req(data_loc, path, app_id, token, gateway) do
-      {:ok, data} = gateway.request(data_loc, path, app_id, token)
-      JsonParser.parse data
+      gateway.request(data_loc, "trends/mau", app_id, token)
     end
   end
+  
 end

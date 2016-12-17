@@ -10,7 +10,7 @@ defmodule ExApteligent.HttpGateway do
   end
 
   defp make_presentable(resp = %Response{status_code: 200}) do
-    {:ok, resp.body}
+    JsonParser.parse resp.body
   end
 
   defp make_presentable(%Response{status_code: status_code}) do

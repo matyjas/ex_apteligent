@@ -1,5 +1,9 @@
 defmodule Fakes.TrendsResponse do
   def sample do
+    JsonParser.parse source
+  end
+
+  def source do
     "{
       \"data\": {
 	\"series\": {
