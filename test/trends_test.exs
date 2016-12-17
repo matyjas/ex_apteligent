@@ -4,7 +4,7 @@ defmodule TrendsTest do
   doctest ExApteligent.Trends
 
   defmodule FakeTrendsGateway do
-    @behaviour ApteligentGateway
+    @behaviour ExApteligent.Gateway
     def request(_, _, _, _) do
       Fakes.TrendsResponse.sample()
     end

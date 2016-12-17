@@ -3,7 +3,7 @@ defmodule ExApteligent.HttpGateway do
   alias HTTPotion.Response
   alias ExApteligent.JsonParser
   
-  @behaviour ApteligentGateway
+  @behaviour ExApteligent.Gateway
   def request(data_loc, path, app_id, token) do
     url = prepare(path, app_id, data_loc: data_loc)
     HTTPotion.get(url, [headers: ["Authorization": "Bearer " <> token]])
