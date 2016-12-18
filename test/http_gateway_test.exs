@@ -6,7 +6,7 @@ defmodule HttpGatewayTest do
   @moduletag :integration
   
   test "request with bad token should be an :error" do
-    {status, _} = HttpGateway.request(:us, "trends", "519d53101386202089000007", "token")
+    {status, _} = HttpGateway.request("trends", "519d53101386202089000007", "token")
     assert status == :error
   end
 
@@ -17,7 +17,7 @@ defmodule HttpGatewayTest do
 
   test "request with good token should be :ok" do
     token = System.get_env("APTELIGENT_TOKEN")
-    {status, _} = HttpGateway.request(:us, "trends", "519d53101386202089000007", token)
+    {status, _} = HttpGateway.request("trends", "519d53101386202089000007", token)
     assert status == :ok
   end
 end

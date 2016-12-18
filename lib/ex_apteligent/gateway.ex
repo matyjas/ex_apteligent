@@ -1,4 +1,4 @@
 defmodule ExApteligent.Gateway do
-  @callback request(atom , String.t, String.t, String.t) :: any
+  @callback request(String.t, String.t, String.t, {atom, atom}) :: any
 end
 

@@ -2,8 +2,8 @@ defmodule ExApteligent.HttpGateway do
   alias HTTPotion.Response
   
   @behaviour ExApteligent.Gateway
-  def request(data_loc, path, app_id, token) do
-    url = ExApteligent.UrlBuilder.prepare(path, app_id, data_loc: data_loc)
+  def request(path, app_id, token, options \\ []) do
+    url = ExApteligent.UrlBuilder.prepare(path, app_id, options)
     HTTPotion.get(url, [headers: ["Authorization": "Bearer " <> token]])
     |> make_presentable
   end

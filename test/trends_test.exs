@@ -11,12 +11,12 @@ defmodule TrendsTest do
   end
   
   test "trends has data" do
-    {:ok, trends} = Trends.trends(:us, "app-1", "token-2", FakeTrendsGateway)
+    {:ok, trends} = Trends.trends("app-1", "token-2", FakeTrendsGateway)
     assert trends != nil
   end
 
   test "trends come back as map" do
-    trendsTuple = Trends.trends(:us, "app-1", "token-2", FakeTrendsGateway)
+    trendsTuple = Trends.trends("app-1", "token-2", FakeTrendsGateway)
     assert is_tuple trendsTuple
     {:ok, trendsMap} = trendsTuple
     refute is_tuple trendsMap
